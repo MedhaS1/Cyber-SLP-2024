@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Password Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Password Analysis Report</h1>
+    <h2>Results:</h2>
+    <ul>
+        {% for check, result in report_dict.items() %}
+        <li>{{ check }}: {{ result }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Recommendations:</h2>
+    {% if recommendations %}
+        <ul>
+        {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your password is strong!</p>
+    {% endif %}
+
+    <h2>Special characters:</h2>
+    <p>Here are valid special characters to include in your password: !, @, #, $, %, ^, &, *, (, ), _, -, .</p>
+    <p>Number of Special Characters Included: {{ count }}</p>
+
+    <h2>Encryption:</h2>
+    <p>Encrypted password: {{ encrypted_password }} </p>
+    <p>Decrypted password: {{ decrypted_password }} </p>
+
+    <h2>Lowercase Letters Report:</h2>
+    <ul>
+        {% for line in lowercaseLetters_report %}
+        <li>{{ line }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Uppercase Letters Report:</h2>
+    <ul>
+        {% for line in uppercaseLetters_report %}
+        <li>{{ line }}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

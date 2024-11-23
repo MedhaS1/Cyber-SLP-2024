@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Password Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Password Analyzer</h1>
+    <form method="POST">
+        <label for="password">Enter Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label>Is your password different from your other passwords?</label><br>
+        <input type="radio" id="uniqueYes" name="unique" value="Y" checked>
+        <label for="uniqueYes">Yes</label>
+        <input type="radio" id="uniqueNo" name="unique" value="N">
+        <label for="uniqueNo">No</label><br><br>
+
+        <label>Is your password easy for you to remember and difficult for others to guess?</label><br>
+        <input type="radio" id="guessableYes" name="guessable" value="Y" checked>
+        <label for="guessableYes">Yes</label>
+        <input type="radio" id="guessableNo" name="guessable" value="N">
+        <label for="guessableNo">No</label><br><br>
+
+        <label>Does your password include personal information?</label><br>
+        <input type="radio" id="personalYes" name="personal" value="Y" checked>
+        <label for="personalYes">Yes</label>
+        <input type="radio" id="personalNo" name="personal" value="N">
+        <label for="personalNo">No</label><br><br>
+
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>
